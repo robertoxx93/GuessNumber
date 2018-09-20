@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="application.GuessNumberController">
+   <top>
+      <Label text="Indovina il numero" textFill="#e81111" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Bauhaus 93" size="22.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <VBox spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox spacing="5.0">
+               <children>
+                  <Button fx:id="btnNuovaPartita" mnemonicParsing="false" onAction="#handleNuovaPartita" text="Nuova partita" />
+                  <Label text="Tentativi">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="txtCurrTentativi" editable="false" prefColumnCount="2" />
+                  <Label text="/" />
+                  <TextField fx:id="txtMaxTentativi" editable="false" prefColumnCount="2" />
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox fx:id="boxGoco" alignment="CENTER" disable="true" spacing="5.0">
+               <children>
+                  <Label text="Tentativo: " />
+                  <TextField fx:id="txtMostraTentativi" prefColumnCount="5" />
+                  <Button mnemonicParsing="false" onAction="#handleProva" text="Prova" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <TextArea fx:id="txtLog" editable="false" prefColumnCount="30" prefRowCount="5" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>
